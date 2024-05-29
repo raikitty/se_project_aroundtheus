@@ -1,0 +1,29 @@
+.cards {
+  margin-top: 51px;
+}
+
+.cards__list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 282px);
+  grid-gap: 20px 17px;
+}
+
+/*style for tablets */
+@media screen and (max-width: 800px) and (min-width: 720px) {
+  .cards {
+    margin-top: 40px;
+  }
+}
+
+/*styles for smaller to larger smart phones */
+@media screen and (max-width: 600px) and (min-width: 320px) {
+  .cards {
+    margin-top: 36px;
+  }
+  .cards__list {
+    row-gap: 20px;
+  }
+}
