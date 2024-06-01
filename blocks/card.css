@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   list-style-type: none;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .card__image {
@@ -9,7 +11,6 @@
   width: 282px;
   display: block;
   object-fit: cover;
-  border-radius: 10px 10px 0 0;
 }
 
 .card__description {
@@ -20,7 +21,6 @@
   background-color: #fff;
   color: #000;
   padding: 25px 20px;
-  border-radius: 0 0 10px 10px;
 }
 
 .card__title {
@@ -38,16 +38,15 @@
 
 .card__heart-button {
   border: none;
-  background: transparent url(../images/heart-active.svg) center no-repeat;
-  width: 21px;
+  background: transparent url(../images/like-inactive.svg) center no-repeat;
+  max-width: 21px;
   height: 18px;
   color: #000;
-  margin: 0;
   flex-shrink: 0;
-  padding: 0;
+  padding: 18px 21px;
+  transition: opacity 0.02s;
 }
 
 .card__heart-button:hover {
   opacity: 50%;
-  cursor: pointer;
 }

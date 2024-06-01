@@ -1,7 +1,8 @@
 .header {
   margin-top: 45px;
   padding-bottom: 41px;
-  border-bottom: 1px solid #545454;
+  border-bottom: 1px solid;
+  border-color: rgba(84, 84, 84, 1);
 }
 
 .header__logo {
