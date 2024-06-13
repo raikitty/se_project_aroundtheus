@@ -12,6 +12,8 @@ Corrections were made to cards.css, footer.css, header.css,and profile.css. Some
 
 - [Link to Repo](https://github.com/raikitty/se_project_aroundtheus)
 
+- [Link to Video Description](https://drive.google.com/file/d/1hkhVhahuGAXw95L47MIy_BQfOUlCUWJ0/view?usp=sharing)
+
 **Intro**
 
 This project is made so all the elements are displayed correctly on popular screen sizes. Following the project's checklist a variety of different technologies were used in the completion of this project.
