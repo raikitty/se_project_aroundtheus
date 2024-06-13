@@ -14,7 +14,7 @@ Corrections were made to cards.css, footer.css, header.css,and profile.css. Some
 
 This project is made so all the elements are displayed correctly on popular screen sizes. Following the project's checklist a variety of different technologies were used in the completion of this project.
 
-These include following the BEM methodology and structure for HTML and CSS. Semantics are a vital piece of this project in that it allows us to understand what the purpose or role the HTML or CSS code may have. For example, the usage of <header>. <footer>, <main>, and <section>.
+These include following the BEM methodology and structure for HTML and CSS. Semantics are a vital piece of this project in that it allows us to understand what the purpose or role the HTML or CSS code may have. For example, the usage of header. footer, main, and section tags.
 
 Fonts were connected using @font-face queries found in inter.css file and placed into it's own font.css file.
 
