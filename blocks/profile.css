@@ -60,6 +60,7 @@
 
 .profile__edit-button:hover {
   opacity: 60%;
+  cursor: pointer;
 }
 
 .profile__add-button {

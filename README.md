@@ -10,7 +10,7 @@
 **Recent Updates**
 Corrections were made to cards.css, footer.css, header.css,and profile.css. Some other corrections include updating the README file, uploading the project to GitHub Pages, and recording a video of the project.
 
-- [Link to Repo](https://github.com/raikitty/se_project_aroundtheus)
+- [Link to Repo](https://raikitty.github.io/se_project_aroundtheus/)
 
 - [Link to Video Description](https://drive.google.com/file/d/1hkhVhahuGAXw95L47MIy_BQfOUlCUWJ0/view?usp=sharing)
 
