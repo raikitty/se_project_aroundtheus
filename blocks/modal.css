@@ -46,31 +46,28 @@
     margin: 0 0 20px 0;
     font-weight: bold; 
     font-size: 24px;
+    line-height: 29.05px;
     color: #000;
 }
 
-.modal__title {
+.modal__form-input-title {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    margin: 0 36px 29.74px 36px;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 16.94px;
+    font-size: 14px;
+    height: 27.26px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
 }
 
-.modal__description {
+.modal__form-input-description {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    margin: 0 36px 48px 36px;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 16.94px;
+    font-size: 14px;
+    height: 27.26px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
 }
 
 .modal__button {
@@ -86,11 +83,15 @@
     cursor: pointer;
 }
 
+.modal__buttom:hover {
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 600px) {
     .modal__container {
         padding: 20px;
     }
-    .modal__heading, .modal__title, .modal__description, .modal__button {
+    .modal__input, .modal__heading, .modal__title, .modal__description, .modal__button {
         width: 100%;
         font-size: 14px;
         margin: 10px 0; /* Consistent spacing */
