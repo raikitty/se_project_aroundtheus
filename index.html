@@ -46,74 +46,13 @@
           ></button>
         </section>
         <section class="cards page__section">
-          <ul class="cards__list">
-            <li class="card">
-              <img
-                class="card__image"
-                src="./images/yosemite.jpg"
-                alt="Yosemite valley"
-              />
-              <div class="card__description">
-                <h2 class="card__title">Yosemite Valley</h2>
-                <button class="card__heart-button" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                src="./images/lake-louise.jpg"
-                alt="Lake Louise"
-              />
-              <div class="card__description">
-                <h2 class="card__title">Lake Louise</h2>
-                <button class="card__heart-button" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                src="./images/bald-mountains.jpg"
-                alt="Bald Mountains"
-              />
-              <div class="card__description">
-                <h2 class="card__title">Bald Mountains</h2>
-                <button class="card__heart-button" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                src="./images/latemar.jpg"
-                alt="Latemar"
-              />
-              <div class="card__description">
-                <h2 class="card__title">Latemar</h2>
-                <button class="card__heart-button" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                src="./images/vanoise.jpg"
-                alt="Vanoise National Park"
-              />
-              <div class="card__description">
-                <h2 class="card__title">Vanoise National Park</h2>
-                <button class="card__heart-button" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                src="./images/lago.jpg"
-                alt="Lago di Braies"
-              />
-              <div class="card__description">
-                <h2 class="card__title">Lago di Braies</h2>
-                <button class="card__heart-button" type="button"></button>
-              </div>
-            </li>
-          </ul>
+          <template id = "card">
+            <div class="card">
+              <img src="" alt="" class="card__image" id="card-image">
+              <h2 class="card__title" id="card-title"></h2>
+              <button class="card__heart-button" type="button" id="card-heart-button"></button>
+            </div>
+          </template>
         </section>
       </main>
       <footer class="footer page__section">
@@ -122,10 +61,10 @@
     </div>
       
     <div class="modal" id="profile-edit-modal">
-      <div class="modal__container" id ="profile-close-modal">
+      <div class="modal__container">
         <button class="modal__close" id="profile-close-button"></button>
         <p class="modal__heading">Edit Profile</p>
-        <form class="modal__form">
+        <form class="modal__form" id="modal-form">
           <input class="modal__form-input-title" id="modal-title" type="text" name = "title" placeholder="Jacques Cousteau"/>
           <input class="modal__form-input-description" id="modal-description" type="text" name = "description" placeholder="Explorer"/>
           <button class="modal__button">Save</button>
