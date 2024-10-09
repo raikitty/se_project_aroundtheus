@@ -46,12 +46,15 @@
           ></button>
         </section>
         <section class="cards page__section">
-          <template id = "card">
-            <div class="card">
-              <img src="" alt="" class="card__image" id="card-image">
-              <h2 class="card__title" id="card-title"></h2>
-              <button class="card__heart-button" type="button" id="card-heart-button"></button>
-            </div>
+          <template id="card-template">
+            <li class="card">
+              <img class="card__image" src="#" alt="" />
+              <div class="card__description">
+                <h2 class="card__title"></h2>
+                <button class="card__like-button" type="button"></button>
+                <button class="card__delete-button" type="button"></button>
+              </div>
+            </li>
           </template>
         </section>
       </main>

@@ -33,9 +33,6 @@ const nameInput = document.querySelector('#modal-title');
 const jobInput = document.querySelector('#modal-description');
 const profileName = document.querySelector('.profile__title');
 const jobName = document.querySelector('.profile__description');
-let cardTemplate = document.querySelector('#card');
-let cardTitle = document.querySelector('#card-title');
-let cardImage = document.querySelector('#card-image');
 
 profileEditButton.addEventListener('click', () => {
     profileEditModal.classList.add('modal_opened');
@@ -56,6 +53,11 @@ function handleProfileFormSubmit(evt) {
 profileFormElement.addEventListener('submit', handleProfileFormSubmit);
 
 function getCardElement(data) {
-    let cardElement = cardTemplate.querySelector('.card');
+    const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
+    const cardImage = cardElement.querySelector(".card__image");
+    const cardTitle = document.querySelector('.card__title');
+    cardImage.src = data.link;
+    cardImage.alt = data.name;
+    cardTitle = data.name;
 
 }
