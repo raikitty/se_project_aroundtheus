@@ -53,11 +53,14 @@ function handleProfileFormSubmit(evt) {
 profileFormElement.addEventListener('submit', handleProfileFormSubmit);
 
 function getCardElement(data) {
+    let cardTemplate = document.querySelector('#card-template').content;
     const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
-    const cardImage = cardElement.querySelector(".card__image");
+    const cardImage = cardElement.querySelector(".card__image").src = data.link;
     const cardTitle = document.querySelector('.card__title');
-    cardImage.src = data.link;
     cardImage.alt = data.name;
-    cardTitle = data.name;
-
+    cardTitle.textContent = data.name;
 }
+
+initialCards.forEach((data) => {
+
+});
