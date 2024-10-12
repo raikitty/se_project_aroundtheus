@@ -50,9 +50,8 @@
     flex-direction: column;
 }
 
-.modal__form-input-title {
+.modal__input {
     width: 358px;
-    margin: 54px 0px 29.74px 0px;
     font-weight: 400;
     font-size: 14px;
     height: 27.26px;
@@ -60,14 +59,12 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.modal__form-input-description {
-    width: 358px;
+.modal__input:first-of-type {
+    margin: 54px 0px 29.74px 0px;
+}
+
+.modal__input:last-of-type {
     margin: 0 0 48px 0;
-    font-weight: 400;
-    font-size: 14px;
-    height: 27.26px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .modal__button {
