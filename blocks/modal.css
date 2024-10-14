@@ -86,11 +86,40 @@
 
 @media only screen and (max-width: 600px) {
     .modal__container {
+        max-width: 238px;
+        max-height: 322px;
         padding: 20px;
+        display: flex;
+        flex-direction: column;
+        position: relative;     
     }
-    .modal__input, .modal__heading, .modal__form-input-title, .modal__form-input-description, .modal__button {
-        width: 100%;
+
+    .modal__input {
+        width: 238px;
+        height: 27px;
         font-size: 14px;
-        margin: 10px 0; /* Consistent spacing */
+        font-weight: 400;
+        line-height: 16.94px;
+    }
+
+    .modal__input:first-of-type {
+        margin: 75px 0px 30px 0px;
+    }
+
+    .modal__input:last-of-type {
+        margin: 0 0 45px 0;
+    }
+
+    .modal__button {
+        width: 238px;
+        height: 46px; 
+        font-size: 14px;
+        line-height: 16.94px;
+        font-weight: 400;
+    }
+
+    .modal__close {
+        width: 26px;
+        height: 26px;
     }
 }
