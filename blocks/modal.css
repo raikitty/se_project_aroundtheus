@@ -88,11 +88,9 @@
     .modal__container {
         max-width: 238px;
         max-height: 322px;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        position: relative;     
-    }
+        padding: 20px; 
+        position: relative;
+    }   
 
     .modal__input {
         width: 238px;
@@ -121,5 +119,7 @@
     .modal__close {
         width: 26px;
         height: 26px;
+        left: calc(100% - 26px);
+        margin-bottom: 13.62px;
     }
 }
