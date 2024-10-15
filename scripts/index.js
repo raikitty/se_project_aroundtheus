@@ -31,8 +31,8 @@ const profileCloseButton = profileEditModal.querySelector('#profile-close-button
 const profileFormElement = document.forms["profile-form"];
 const profileTitle = document.querySelector('.profile__title');
 const profileDescription = document.querySelector('.profile__description');
-const profileTitleInput = document.querySelector("[name='title']");;
-const profileDescriptionInput = document.querySelector("[name='description']");
+const profileTitleInput = document.querySelector('#modal-title');;
+const profileDescriptionInput = document.querySelector('#modal-description');
 const cardTemplate = document.querySelector('#card-template').content.firstElementChild;
 const cardListEl = document.querySelector('.cards__list');
 
@@ -51,7 +51,7 @@ function handleProfileFormSubmit(evt) {
 function getCardElement(data) {
     const cardElement = cardTemplate.cloneNode(true);
     const cardImageEl = cardElement.querySelector(".card__image");
-    const cardTitleEl = cardElement.querySelector('.card__title');
+    const cardTitleEl = cardElement.querySelector(".card__title");
     cardImageEl.src = data.link;
     cardImageEl.alt = data.name;
     cardTitleEl.textContent = data.name;
