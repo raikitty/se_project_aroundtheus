@@ -94,7 +94,13 @@
         max-height: 322px;
         padding: 25px 22px 25px 22px; 
         position: relative;
-    }   
+    }
+
+    .modal__heading {
+        font-size: 18px;
+        font-weight: 900;
+        line-height: 21.78px;
+    }
 
     .modal__input {
         width: 238px;
