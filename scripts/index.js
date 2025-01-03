@@ -38,12 +38,12 @@ const cardTemplate = document.querySelector('#card-template').content.firstEleme
 const cardListEl = document.querySelector('.cards__list');
 const profileModalCloseButton = profileEditModal.querySelector('#profile-close-button');
 const addCardModalCloseButton = addCardModal.querySelector('.modal__close');
-const addNewCardButton = document.querySelector('.profile_add-button');
+const addNewCardButton = document.querySelector('.profile__add-button');
 
 const previewImageModal = document.querySelector("#preview-image-modal");
 const previewTitleEl = previewImageModal.querySelector(".modal__title");
 const previewImageEl = previewImageModal.querySelector(".modal__image");
-const previewModalCloseBtn = previewImageModal.querySelector(".modal__class");
+const previewModalCloseBtn = previewImageModal.querySelector(".modal__close");
 
 
 function closeModal(modal) {
@@ -79,9 +79,9 @@ function getCardElement(data) {
         previewImageEl.alt = data.name;
         previewTitleEl.textContent = data.name;
     });
-        
+       
     likeButton.addEventListener('click', () => {
-        likeButton.classList.toggle('.card__like-button_active');
+        likeButton.classList.toggle("card__like-button_active");
     });
 
     cardImageEl.src = data.link;
