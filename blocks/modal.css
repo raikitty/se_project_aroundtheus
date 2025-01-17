@@ -9,6 +9,7 @@
     /* display: flex; */
     padding: 0 19px;
     display: none; 
+    transition: visibility 0.3s, opacity 0.3s ease-in;
 }
 
 .modal_opened {
