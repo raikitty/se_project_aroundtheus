@@ -106,8 +106,9 @@ profileFormElement.addEventListener('submit', handleProfileFormSubmit);
 
 addCardForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
-    const name = getCardElement(addCardTitle);
-    const link = getCardElement(addCardUrl);
+    const name = addCardTitle.value;
+    const link = addCardUrl.value; 
+    getCardElement({addCardTitle, addCardUrl})
     cardListEl.append(name);
     cardListEl.append(link);
 
