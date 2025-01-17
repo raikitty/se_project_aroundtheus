@@ -29,7 +29,7 @@ const profileEditButton = document.querySelector('#profile-edit-button');
 const profileEditModal = document.querySelector('#profile-edit-modal');
 const addCardModal = document.querySelector('#add-card-modal');
 const profileFormElement = document.forms["profile-form"];
-const addCardForm = document.querySelector('.add-card-form');
+const addCardForm = document.querySelector('#add-card-form');
 
 const profileTitle = document.querySelector('.profile__title');
 const profileDescription = document.querySelector('.profile__description');
@@ -38,8 +38,11 @@ const profileDescriptionInput = document.querySelector('#modal-description');
 const cardTemplate = document.querySelector('#card-template').content.firstElementChild;
 const cardListEl = document.querySelector('.cards__list');
 const profileModalCloseButton = profileEditModal.querySelector('#profile-close-button');
+
 const addCardModalCloseButton = addCardModal.querySelector('.modal__close');
 const addNewCardButton = document.querySelector('.profile__add-button');
+const addCardTitle = addCardModal.querySelector('.modal__input_type_title');
+const addCardUrl = addCardModal.querySelector('.modal__input_type_url');
 
 const previewImageModal = document.querySelector("#preview-image-modal");
 const previewTitleEl = previewImageModal.querySelector(".modal__title");
@@ -99,16 +102,17 @@ profileEditButton.addEventListener('click', () => {
 });    
 
 profileModalCloseButton.addEventListener('click', () => closeModal(profileEditModal));
-
 profileFormElement.addEventListener('submit', handleProfileFormSubmit);
 
-// add new card 
 addCardForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
-    const cardElement = getCardElement(data);
-    cardListEl.prepend(cardElement);
-    closeModal(addCardModal); // Ensure addCardModal is a valid reference
-  });
+    const name = getCardElement(addCardTitle);
+    const link = getCardElement(addCardUrl);
+    cardListEl.append(name);
+    cardListEl.append(link);
+
+    closeModal(addCardModal); 
+});
 
 addNewCardButton.addEventListener('click', () => openModal(addCardModal));
 addCardModalCloseButton.addEventListener('click', () => closeModal(addCardModal));
