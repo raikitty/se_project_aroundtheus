@@ -29,6 +29,7 @@ const profileEditButton = document.querySelector('#profile-edit-button');
 const profileEditModal = document.querySelector('#profile-edit-modal');
 const addCardModal = document.querySelector('#add-card-modal');
 const profileFormElement = document.forms["profile-form"];
+const addCardForm = document.querySelector('.add-card-form');
 
 const profileTitle = document.querySelector('.profile__title');
 const profileDescription = document.querySelector('.profile__description');
@@ -97,12 +98,18 @@ profileEditButton.addEventListener('click', () => {
     openModal(profileEditModal);
 });    
 
-
 profileModalCloseButton.addEventListener('click', () => closeModal(profileEditModal));
 
 profileFormElement.addEventListener('submit', handleProfileFormSubmit);
 
 // add new card 
+addCardForm.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    const cardElement = getCardElement(data);
+    cardListEl.prepend(cardElement);
+    closeModal(addCardModal); // Ensure addCardModal is a valid reference
+  });
+
 addNewCardButton.addEventListener('click', () => openModal(addCardModal));
 addCardModalCloseButton.addEventListener('click', () => closeModal(addCardModal));
 
