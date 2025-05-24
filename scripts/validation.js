@@ -31,8 +31,8 @@ function hasInvalidInput(inputList) {
 
 function disableButton(submitButton, {inactiveButtonClass}) {
     submitButton.classList.add(inactiveButtonClass);
-    submitButton.disabled = true;
-    return;
+    return submitButton.disabled = true;
+    
 }
 
 function enableButton(submitButton, {inactiveButtonClass}) {
@@ -51,7 +51,7 @@ function togglebuttonState(inputEls) {
 function setEventListeners(formEl, options) {
     const {inputSelector} = options;
     const inputEls = [...formEl.querySelectorAll(inputSelector)];
-    const submitButton = (formEl.querySelector('.modal__button'));
+    const submitButton = formEl.querySelector('.modal__button');
     inputEls.forEach((inputEl) => {
         inputEl.addEventListener("input", () => {
             checkInputValidity(formEl, inputEl, options);
@@ -70,18 +70,6 @@ function enableValidation(options) {
     });
     
     setEventListeners(formEl, options);
-
-    // look for all ionputs inside of form
-    // loop through all the inputs to see if all are valid
-        // if input is not valid 
-            // get validation message 
-            // add error class to input
-            // display error message
-            // disable button
-        // if all inputs are valid
-            // enable button
-            // reset error messages
-
 });
 }
 
