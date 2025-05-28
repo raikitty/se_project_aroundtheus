@@ -5,14 +5,14 @@ function showInputError(formEl,inputEl, {inputErrorClass, errorClass}) {
     const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
     inputEl.classList.add(inputErrorClass);
     errorMessageEl.textContext = inputEl.validationMessage;
-    errorMessageEl.classlist.add(errorClass);  
+    errorMessageEl.classList.add(errorClass);  
 }
 
 function hideInputError(formEl,inputEl, {inputErrorClass, errorClass}) {
     const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
     inputEl.classList.remove(inputErrorClass);
     errorMessageEl.textContext = "";
-    errorMessageEl.classlist.remove(errorClass);  
+    errorMessageEl.classList.remove(errorClass);  
 }
 
 function checkInputValidity(formEl, inputEl, options) {
@@ -40,12 +40,12 @@ function enableButton(submitButton, {inactiveButtonClass}) {
     submitButton.disabled = false;
 }
 
-function togglebuttonState(inputEls) {
+function togglebuttonState(inputEls, submitButton, {inactiveButtonClass}) {
     if(hasInvalidInput(inputEls)) {
-        disableButton();
+        disableButton(submitButton, {inactiveButtonClass});
     } 
 
-    enableButton();    
+    enableButton(submitButton, {inactiveButtonClass});    
 }
 
 function setEventListeners(formEl, options) {
