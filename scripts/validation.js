@@ -4,14 +4,14 @@
 function showInputError(formEl,inputEl, {inputErrorClass, errorClass}) {
     const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
     inputEl.classList.add(inputErrorClass);
-    errorMessageEl.textContext = inputEl.validationMessage;
+    errorMessageEl.textContent = inputEl.validationMessage;
     errorMessageEl.classList.add(errorClass);  
 }
 
 function hideInputError(formEl,inputEl, {inputErrorClass, errorClass}) {
     const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
     inputEl.classList.remove(inputErrorClass);
-    errorMessageEl.textContext = "";
+    errorMessageEl.textContent = "";
     errorMessageEl.classList.remove(errorClass);  
 }
 
