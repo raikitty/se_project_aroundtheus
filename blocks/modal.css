@@ -106,6 +106,18 @@
     margin: 0 0 48px 0;
 }
 
+.modal__input_type_error {
+   border-bottom: 1px solid #FF000099;
+   opacity: 60%;
+}
+
+.modal__error {
+    display: block;
+    color: #FF0000;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
 .modal__button {
     width: 358px;
     height: 50.15px;
@@ -120,7 +132,13 @@
 }
 
 .modal__buttom:hover {
+    opacity: 80%;
     cursor: pointer;
+}
+
+.modal__button_disabled {
+    background: #000;
+    opacity: 15%;
 }
 
 @media only screen and (max-width: 600px) {
