@@ -73,6 +73,14 @@ function enableValidation(options) {
 });
 }
 
+function resetValidation(formEl, options) {
+  const inputEls = [...formEl.querySelectorAll(options.inputSelector)];
+  const submitButton = formEl.querySelector(options.submitButtonSelector);
+
+  inputEls.forEach(inputEl => hideInputError(formEl, inputEl, options));
+  togglebuttonState(inputEls, submitButton, options);
+}
+
 const config = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",

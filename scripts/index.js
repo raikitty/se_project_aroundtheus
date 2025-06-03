@@ -114,6 +114,7 @@ function getCardElement(data) {
 profileEditButton.addEventListener('click', () => {
     profileTitleInput.value = profileTitle.textContent;
     profileDescriptionInput.value = profileDescription.textContent;
+    resetValidation(profileFormElement, config);
     openModal(profileEditModal);
 });    
 
@@ -130,7 +131,11 @@ addCardForm.addEventListener('submit', (evt) => {
     closeModal(addCardModal); 
 });
 
-addNewCardButton.addEventListener('click', () => openModal(addCardModal));
+addNewCardButton.addEventListener('click', () => {
+    resetValidation(addCardForm, config);
+    openModal(addCardModal);
+})
+
 addCardModalCloseButton.addEventListener('click', () => closeModal(addCardModal));
 
 //preview image

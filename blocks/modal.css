@@ -119,6 +119,7 @@
     display: block;
     color: #FF0000;
     font-size: 12px;
+    position: absolute;
 }
 
 .modal__error:first-of-type {
