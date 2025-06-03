@@ -88,6 +88,10 @@
     flex-direction: column;
 }
 
+.modal__label {
+  position: relative;
+}
+
 .modal__input {
     width: 358px;
     font-weight: 400;
@@ -115,7 +119,10 @@
     display: block;
     color: #FF0000;
     font-size: 12px;
-    margin-top: 5px;
+}
+
+.modal__error:first-of-type {
+    top: calc(100% - 25px);
 }
 
 .modal__button {

@@ -52,10 +52,26 @@ const previewModalCloseBtn = previewImageModal.querySelector(".modal__close");
 
 function closeModal(modal) {
     modal.classList.remove('modal_opened');
+    document.removeEventListener('keydown', handleEsc);
 }
 
 function openModal(modal) {
     modal.classList.add('modal_opened'); 
+    modal.addEventListener('click', handleOverlay);
+    document.addEventListener('keydown', handleEsc);
+}
+
+function handleOverlay(evt) {
+    if (evt.target.classList.contains('modal')) {
+        closeModal(evt.target);
+    }
+}
+
+function handleEsc(evt) {
+    if (evt.key === 'Escape' || evt.key === 'Esc') {
+        const modal = document.querySelector('.modal_opened');
+        closeModal(modal);
+    }
 }
 
 function handleProfileFormSubmit(evt) {
