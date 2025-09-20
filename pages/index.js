@@ -1,3 +1,5 @@
+import Card from "./Card.js";
+
 const initialCards = [
     {
      name: "Yosemite Valley",
@@ -24,6 +26,11 @@ const initialCards = [
      link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg"
     }
 ];
+
+const card = Card(initialCards);
+
+const editFormValidator = new FormValidator(settings, editForm);
+const addFormValidator = new FormValidator(settings, addForm);
 
 const profileEditButton = document.querySelector('#profile-edit-button'); 
 const profileEditModal = document.querySelector('#profile-edit-modal');
@@ -153,3 +160,4 @@ initialCards.forEach((data) => {
     cardListEl.prepend(cardElement);
 });
 
+editFormValidator.enableValidation();
