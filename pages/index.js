@@ -30,9 +30,6 @@ const initialCards = [
 
 const card = Card(initialCards);
 
-const editFormValidator = new FormValidator(settings, editForm);
-const addFormValidator = new FormValidator(settings, addForm);
-
 const profileEditButton = document.querySelector('#profile-edit-button'); 
 const profileEditModal = document.querySelector('#profile-edit-modal');
 const addCardModal = document.querySelector('#add-card-modal');
@@ -57,6 +54,19 @@ const previewTitleEl = previewImageModal.querySelector(".modal__title");
 const previewImageEl = previewImageModal.querySelector(".modal__image");
 const previewModalCloseBtn = previewImageModal.querySelector(".modal__close");
 
+const validationSettings = {
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error"
+}
+
+const editFormValidator = new FormValidator(validationSettings, profileFormElement);
+const addFormValidator = new FormValidator(validationSettings, addCardForm);
+
+editFormValidator.enableValidation();
+addFormValidator.enableValidation();
 
 function closeModal(modal) {
     modal.classList.remove('modal_opened');
@@ -161,4 +171,3 @@ initialCards.forEach((data) => {
     cardListEl.prepend(cardElement);
 });
 
-editFormValidator.enableValidation();
