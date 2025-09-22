@@ -32,8 +32,8 @@ class FormValidator {
         hideInputError(this._form, inputEl);
     }
     
-    _hasInvalidInput(inputlist) {
-        return !inputlist.every((inputEl) => inputEl.validity.valid);
+    _hasInvalidInput() {
+        return !this._inputEls.every((inputEl) => inputEl.validity.valid);
     }
     
     _disableButton() {
@@ -46,8 +46,8 @@ class FormValidator {
         this._submitButtonSelector.disabled = false;
     }
     
-    _togglebuttonState(inputEls) {
-        if(hasInvalidInput(inputEls)) {
+    _togglebuttonState() {
+        if(hasInvalidInput(this._inputEls)) {
             return disableButton(this._submitButtonSelector, this._inactiveButtonClass);
         }
 

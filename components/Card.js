@@ -1,9 +1,13 @@
 export default class Card {
-    constructor({name, link}, cardSelector, handleImageClick) {
-        this._name = name;
-        this._link = link;
+    constructor(data, cardSelector, handleImageClick) {
+        this._name = data.name;
+        this._link = data.link;
         this._cardSelector = cardSelector;
         this._handeImageClick = handleImageClick;
+    }
+
+    _getTemplate() {
+        return document.querySelector(this._cardSelector).content.querySelector(".card").closeNode(true);
     }
 
     _setEventListeners() {
@@ -13,8 +17,8 @@ export default class Card {
         this._cardElement.querySelector('.card__delete-button').addEventListener('click', () => {
             this._handleDeleteCard();
         })
-        this._cardImageElement.addEventListener('click', () => { 
-            this._handleImageClick(this);
+        this._cardImageEl.addEventListener('click', () => { 
+            this._handleImageClick({name: this._name, link: this._link});
         })
     }
     
@@ -27,11 +31,29 @@ export default class Card {
         this._cardElement = null;
     }
 
-    getView() {
-        this._cardElement = document.querySelector(this._cardSelector).content.querySelector('.card').cloneNode(true);
-        // get card view
-        // set evemt lisnters
-        this._setEventListeners();
-        // return the card
+    _handleImageClick() {
+         if (this._handleImageClick) {
+            this._handleImageClick({
+                name: this._name,
+                link: this._link, 
+            });
+         }
     }
+
+    getView() {
+        this._cardElement = this._getTemplate();
+        
+        this._cardImageEl = this._cardElement.querySelector(".modal__image").style.background = `url(${this._link})`;
+        this._cardTitleEl = this._cardElement.querySelector(".modal__title").textContent = this._name;
+
+        this._cardImageEl.src = this._link;
+        this._cardTitleEl.alt = this._name;
+
+
+        this._setEventListeners();
+
+        return this._cardElement;
+    };
+
+    
 }
