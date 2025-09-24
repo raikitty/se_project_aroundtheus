@@ -100,7 +100,7 @@ function handleProfileFormSubmit(evt) {
     closeModal(profileEditModal);
 }
 
-function getCardElement(data) {
+/* function getCardElement(data) {
     const cardElement = cardTemplate.cloneNode(true);
     const cardImageEl = cardElement.querySelector('.card__image');
     const cardTitleEl = cardElement.querySelector('.card__title');
@@ -127,6 +127,12 @@ function getCardElement(data) {
     cardImageEl.alt = data.name;
     cardTitleEl.textContent = data.name;
     return cardElement;
+}
+ */
+
+function createCard(data) {
+    const newCard = new Card(data, cardSelector, handleImageClick);
+    return newCard.getView();
 }
 
 profileEditButton.addEventListener('click', () => {

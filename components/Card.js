@@ -47,7 +47,7 @@ export default class Card {
         this._cardTitleEl = this._cardElement.querySelector(".modal__title").textContent = this._name;
 
         this._cardImageEl.src = this._link;
-        this._cardTitleEl.alt = this._name;
+        this._cardImageEl.alt = this._name;
 
 
         this._setEventListeners();
