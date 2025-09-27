@@ -9,7 +9,7 @@ class FormValidator {
         this._form = formElement;
     }
 
-    _showInputError(inputEl, errorMessageEl) {
+    _showInputError(inputEl) {
         const errorMessageEl = this._form.querySelector(`#${inputEl.id}-error`);
         inputEl.classList.add(this._inputErrorClass);
         errorMessageEl.textContent = inputEl.validationMessage;
@@ -67,12 +67,12 @@ class FormValidator {
         });
     }
 
-    enableValication() {
+    enableValidation() {
         this._form.addEventListener("submit", (evt) => {
             evt.preventDefault();
         });
     
-        setEventListeners(this._form, options);
+        setEventListeners(this._form, settings);
     }
     
     resetValidation() {
