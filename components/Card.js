@@ -43,8 +43,8 @@ export default class Card {
     getView() {
         this._cardElement = this._getTemplate();
         
-        this._cardImageEl = this._cardElement.querySelector(".modal__image");
-        this._cardTitleEl = this._cardElement.querySelector(".modal__title");
+        this._cardImageEl = this._cardElement.querySelector(".card__image");
+        this._cardTitleEl = this._cardElement.querySelector(".card__title");
 
         this._cardImageEl.src = this._link;
         this._cardImageEl.alt = this._name;
