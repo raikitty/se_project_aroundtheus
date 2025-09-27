@@ -72,15 +72,15 @@ class FormValidator {
             evt.preventDefault();
         });
     
-        this._setEventListeners(this._form, settings);
+        this._setEventListeners(this._form);
     }
     
     resetValidation() {
         this._inputEls = [...this._form.querySelectorAll(this._inputSelector)];
         this._submitButton = this._form.querySelector(this._submitButtonSelector);
 
-        inputEls.forEach(inputEl => _hideInputError(this._form, inputEl));
-        togglebuttonState(this._inputEls, this._submitButton);
+        this._inputEls.forEach(inputEl => _hideInputError(this._form, inputEl));
+        this._togglebuttonState(this._inputEls, this._submitButton);
     }
 
 }
