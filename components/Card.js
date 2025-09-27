@@ -3,11 +3,11 @@ export default class Card {
         this._name = data.name;
         this._link = data.link;
         this._cardSelector = cardSelector;
-        this._handeImageClick = handleImageClick;
+        this._handleImageClick = handleImageClick;
     }
 
     _getTemplate() {
-        return document.querySelector(this._cardSelector).content.querySelector(".card").closeNode(true);
+        return document.querySelector(this._cardSelector).content.querySelector(".card").cloneNode(true);
     }
 
     _setEventListeners() {
