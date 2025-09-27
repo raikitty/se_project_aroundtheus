@@ -26,10 +26,10 @@ class FormValidator {
     
     _checkInputValidity(inputEl) {
         if (!inputEl.validity.valid) {
-            return showInputError(this._form, inputEl);
+            return this._showInputError(this._form, inputEl);
+        } else {
+        this._hideInputError(this._form, inputEl);
         }
-
-        hideInputError(this._form, inputEl);
     }
     
     _hasInvalidInput() {
@@ -47,21 +47,21 @@ class FormValidator {
     }
     
     _togglebuttonState() {
-        if(hasInvalidInput(this._inputEls)) {
-            return disableButton(this._submitButtonSelector, this._inactiveButtonClass);
+        if(this._hasInvalidInput(this._inputEls)) {
+            return this._disableButton(this._submitButtonSelector, this._inactiveButtonClass);
         }
 
-        enableButton(this._submitButtonSelector, this._inactiveButtonClass); 
+        _enableButton(this._submitButtonSelector, this._inactiveButtonClass); 
     } 
 
     _setEventListeners() {
         this._inputEls = [...this._form.querySelectorAll(this._inputSelector)];
         this._submitButton = this._form.querySelector(this._submitButtonSelector);
         
-        inputEls.forEach((inputEl) => {
+        this._inputEls.forEach((inputEl) => {
             inputEl.addEventListener("input", () => {
-                checkInputValidity(this._form, inputEl);
-                togglebuttonState(this._inputEls, this._submitButton);
+                this._checkInputValidity(this._form, inputEl);
+                this._togglebuttonState(this._inputEls, this._submitButton);
 
             });
         });
@@ -72,14 +72,14 @@ class FormValidator {
             evt.preventDefault();
         });
     
-        setEventListeners(this._form, settings);
+        this._setEventListeners(this._form, settings);
     }
     
     resetValidation() {
         this._inputEls = [...this._form.querySelectorAll(this._inputSelector)];
         this._submitButton = this._form.querySelector(this._submitButtonSelector);
 
-        inputEls.forEach(inputEl => hideInputError(this._form, inputEl));
+        inputEls.forEach(inputEl => _hideInputError(this._form, inputEl));
         togglebuttonState(this._inputEls, this._submitButton);
     }
 
