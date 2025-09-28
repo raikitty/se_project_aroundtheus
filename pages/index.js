@@ -131,8 +131,8 @@ function handleProfileFormSubmit(evt) {
 }
  */
 
-function handleImageClick(data) {
-    openModal({name: data.name, link: data.link});
+function handleImageClick() {
+    Card.handleImageClick;
 }
 
 function createCard(data) {
