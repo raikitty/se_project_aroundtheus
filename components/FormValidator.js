@@ -18,6 +18,7 @@ class FormValidator {
 
     _hideInputError(inputEl) {
         const errorMessageEl = this._form.querySelector(`#${inputEl.id}-error`);
+        console.log(inputEl);
         inputEl.classList.remove(this._inputErrorClass);
         errorMessageEl.textContent = "";
         errorMessageEl.classList.remove(this._errorClass);
@@ -79,7 +80,7 @@ class FormValidator {
         this._inputEls = [...this._form.querySelectorAll(this._inputSelector)];
         this._submitButton = this._form.querySelector(this._submitButtonSelector);
 
-        this._inputEls.forEach(inputEl => _hideInputError(this._form, inputEl));
+        this._inputEls.forEach(inputEl => this._hideInputError(this._form, inputEl));
         this._togglebuttonState(this._inputEls, this._submitButton);
     }
 

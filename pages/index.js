@@ -143,7 +143,7 @@ function createCard(data) {
 profileEditButton.addEventListener('click', () => {
     profileTitleInput.value = profileTitle.textContent;
     profileDescriptionInput.value = profileDescription.textContent;
-    resetValidation(profileFormElement, config);
+    editFormValidator.resetValidation(profileFormElement, validationSettings);
     openModal(profileEditModal);
 });    
 
@@ -161,7 +161,7 @@ addCardForm.addEventListener('submit', (evt) => {
 });
 
 addNewCardButton.addEventListener('click', () => {
-    resetValidation(addCardForm, config);
+    FormValidator.resetValidation(addCardForm, validationSettings);
     openModal(addCardModal);
 })
 
