@@ -2,7 +2,7 @@ class FormValidator {
     constructor(settings, formElement) {
         this._inputSelector = settings.inputSelector;
         this._submitButtonSelector = settings.submitButtonSelector;
-        this._inactiveButtonClass = settings._inactiveButtonClass;
+        this._inactiveButtonClass = settings.inactiveButtonClass;
         this._inputErrorClass = settings.inputErrorClass
         this._errorClass = settings.errorClass;
         
@@ -38,13 +38,13 @@ class FormValidator {
     }
     
     disableButton() {
-        this._submitButtonSelector.classList.add(this._inactiveButtonClass);
-        this._submitButtonSelector.disabled = true;
+        this._submitButton.classList.add(this._inactiveButtonClass);
+        this._submitButton.disabled = true;
     }
     
     enableButton() {
-        this._submitButtonSelector.classList.remove(this._inactiveButtonClass);
-        this._submitButtonSelector.disabled = false;
+        this._submitButton.classList.remove(this._inactiveButtonClass);
+        this._submitButton.disabled = false;
     }
     
     _togglebuttonState() {
@@ -58,6 +58,8 @@ class FormValidator {
     _setEventListeners() {
         this._inputEls = [...this._form.querySelectorAll(this._inputSelector)];
         this._submitButton = this._form.querySelector(this._submitButtonSelector);
+
+        this._togglebuttonState();
         
         this._inputEls.forEach((inputEl) => {
             inputEl.addEventListener("input", (e) => {

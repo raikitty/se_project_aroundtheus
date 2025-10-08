@@ -18,8 +18,11 @@ export default class Card {
             this._handleDeleteCard();
         })
         this._cardImageEl.addEventListener('click', () => { 
-            this._handleImageClick(this);
-        })
+            this._handleImageClick({
+                name: this._name,
+                link: this._link,
+            });
+        });
     }
     
     _handleLikeIcon() {
@@ -29,15 +32,6 @@ export default class Card {
     _handleDeleteCard() {
         this._cardElement.remove();
         this._cardElement = null;
-    }
-
-    _handleImageClick() {
-         if (this._handleImageClick) {
-            this._handleImageClick({
-                name: this._name,
-                link: this._link, 
-            });
-         }
     }
 
     getView() {
